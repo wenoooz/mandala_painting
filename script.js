@@ -85,11 +85,13 @@ function draw(e) {
     ctx.fill();
 }
 
-// **撤销功能**
+// 修复撤销功能
 undoButton.addEventListener('click', () => {
     if (historyStack.length > 1) {
         historyStack.pop();
         ctx.putImageData(historyStack[historyStack.length - 1], 0, 0);
+    } else {
+        console.log("无法撤销，没有更多历史记录");
     }
 });
 
@@ -101,8 +103,16 @@ clearButton.addEventListener('click', () => {
     saveState();
 });
 
-// **保存历史状态**
+// 修复撤销历史保存
 function saveState() {
-    historyStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-    if (historyStack.length > 20) historyStack.shift(); // 只保留 20 步撤销
+    if (historyStack.length === 0 || !compareImageData(ctx.getImageData(0, 0, canvas.width, canvas.height), historyStack[historyStack.length - 1])) {
+        historyStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+        if (historyStack.length > 20) historyStack.shift(); // 只保留 20 步撤销
+    }
+}
+
+// 防止重复存储相同状态
+function compareImageData(imgData1, imgData2) {
+    if (!imgData1 || !imgData2) return false;
+    return imgData1.data.every((value, index) => value === imgData2.data[index]);
 }
