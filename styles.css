@@ -16,6 +16,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
+
+/* 字体样式 */
 @font-face {
     font-family: "chn";
     src: url("fonts/zihun.ttf") format("truetype");
@@ -24,6 +26,7 @@ body {
     font-family: "eng";
     src: url("fonts/thin.ttf") format("truetype");
 }
+
 /* 标题样式 */
 h1 {
     font-family: "chn", sans-serif;
@@ -49,7 +52,6 @@ h1 {
 }
 
 .color-swatch.active {
-
     border: 2px solid #000;
 }
 
@@ -110,12 +112,12 @@ button {
     background-color: #edb32a;
 }
 
-
+/* 图片选择按钮 */
 .image-selector {
     display: flex;
-    flex-wrap: wrap; /* 允许按钮换行 */
-    gap: 12px; /* 按钮间距 */
-    justify-content: center; /* 居中排列 */
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -136,14 +138,71 @@ button {
     background-color: #bbb;
 }
 
-/*响应式布局*/
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 50px; /* 标题字体大小调整 */
+    }
+
+    .container {
+        width: 95%; /* 容器宽度调整 */
+        padding: 15px;
+    }
+
+    .color-palette {
+        gap: 10px; /* 增加颜色板按钮间距 */
+    }
+
+    .image-selector {
+        gap: 15px;
+    }
+
+    .brush-controls {
+        margin-bottom: 10px; /* 增加笔刷控制区域的底部间距 */
+    }
+
+    #brushSize {
+        width: 120px; /* 调整笔刷大小选择器宽度 */
+    }
+
+    button {
+        font-size: 14px; /* 按钮文字字体调整 */
+    }
+}
+
+/* 手机端适配 */
 @media (max-width: 600px) {
     .container {
         width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 40px; /* 手机端标题字体调整 */
+    }
+
+    .color-palette {
+        flex-direction: row; /* 颜色板排列方式调整 */
+        gap: 5px;
     }
 
     .image-selector {
         flex-direction: column;
         align-items: center;
+        gap: 8px;
+    }
+
+    canvas {
+        width: 100%; /* 画布宽度适应手机屏幕 */
+        height: auto; /* 画布高度自适应 */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    #brushSize {
+        width: 80px; /* 手机端笔刷选择器宽度调整 */
     }
 }
