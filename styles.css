@@ -1,64 +1,141 @@
+/* 页面整体布局 */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+/* 容器样式 */
 .container {
-    background-color: #fff;
-    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
     padding: 20px;
-    display: inline-block;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
+@font-face {
+    font-family: "customFont";
+    src: url("fonts/zihun.ttf") format("truetype");
+}
+/* 标题样式 */
+h1 {
+    font-family: "customFont", sans-serif;
+    color: #0e6dac;
+}
+
+/* 颜色板 */
 .color-palette {
-    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
 .color-swatch {
-    display: inline-block;
     width: 30px;
     height: 30px;
-    border: 2px solid #ccc;
-    margin: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 5px;
+    border: 2px solid transparent;
 }
 
 .color-swatch.active {
-    border: 3px solid #000;
+    border: 2px solid #000;
 }
 
 #customColorPicker {
     width: 40px;
-    height: 40px;
-    margin-left: 10px;
+    height: 30px;
+    border: none;
     cursor: pointer;
 }
 
-#coloringCanvas {
-    border: 1px solid #000;
-    margin: 10px 0;
-    cursor: crosshair;
+/* 画布样式 */
+canvas {
+    display: block;
+    margin: 15px auto;
+    border: 2px solid #c2c2c2;
+    background-color: white;
+    border-radius: 5px;
 }
 
-.controls, .brush-controls, .image-selector {
-    margin: 10px 0;
+/* 笔刷控制 */
+.brush-controls {
+    margin-bottom: 5px;
+}
+
+#brushSize {
+    width: 100px;
+}
+
+/* 按钮组 */
+.controls {
+    margin-top: 10px;
 }
 
 button {
     padding: 8px 15px;
-    margin: 0 5px;
-    background-color: #007BFF;
-    color: white;
+    font-size: 16px;
+    margin: 5px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+#undo {
+    background-color: #ffcc00;
+}
+
+#undo:hover {
+    background-color: #e6b800;
+}
+
+#clear {
+    background-color: #ff4444;
+    color: white;
+}
+
+#clear:hover {
+    background-color: #cc0000;
+}
+
+
+.image-selector {
+    display: flex;
+    flex-wrap: wrap; /* 允许按钮换行 */
+    gap: 12px; /* 按钮间距 */
+    justify-content: center; /* 居中排列 */
+    margin-top: 10px;
+}
+
+.image-btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.image-btn:hover {
+    background-color: #bbb;
+}
+
+/*响应式布局*/
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .image-selector {
+        flex-direction: column;
+        align-items: center;
+    }
 }
