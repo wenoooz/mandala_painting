@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>曼陀罗绘画</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>曼陀罗绘画</h1>
+
+        <!-- 背景音乐 -->
+        <audio id="bgMusic" src="your-music.mp3" loop></audio>
+
+        <!-- 颜色板 -->
+        <div class="color-palette">
+            <span class="color-swatch" data-color="#E80C00" style="background-color: #E80C00;"></span>
+            <span class="color-swatch" data-color="#DD8D52" style="background-color: #DD8D52;"></span>
+            <span class="color-swatch" data-color="#FEEC32" style="background-color: #FEEC32;"></span>
+            <span class="color-swatch" data-color="#40BD1C" style="background-color: #40BD1C;"></span>
+            <span class="color-swatch" data-color="#6AA0D6" style="background-color: #6AA0D6;"></span>
+            <span class="color-swatch" data-color="#811B85" style="background-color: #811B85;"></span>
+            <span class="color-swatch" data-color="#FFFFFF" style="background-color: #FFFFFF;"></span>
+            <span class="color-swatch" data-color="#000000" style="background-color: #000000;"></span>  
+            <span class="color-swatch" data-color="#AF5F56" style="background-color: #AF5F56;"></span>
+            <span class="color-swatch" data-color="#636363" style="background-color: #636363;"></span>
+            <span class="color-swatch" data-color="#F884CD" style="background-color: #F884CD;"></span>
+            <span class="color-swatch" data-color="#61FCE5" style="background-color: #61FCE5;"></span>
+            <input type="color" id="customColorPicker" title="自定义颜色">
+        </div>
+
+        <!-- 笔刷大小 -->
+        <div class="brush-controls">
+            <label for="brushSize">笔刷大小:</label>
+            <input type="range" id="brushSize" min="10" max="50" value="10">
+            <span id="brushSizeValue">10</span> px
+        </div>
+
+        <!-- 多图选择 -->
+        <div class="image-selector">
+            <button class="image-btn" data-img="art1.png">day1</button>
+            <button class="image-btn" data-img="art2.png">day2</button>
+            <button class="image-btn" data-img="art3.png">day3</button>
+            <button class="image-btn" data-img="art4.png">day4</button>
+            <button class="image-btn" data-img="art5.png">day5</button>
+            <button class="image-btn" data-img="art6.png">day6</button>
+            <button class="image-btn" data-img="art7.png">day7</button>
+            <button class="image-btn" data-img="art8.png">day8</button>
+            <button class="image-btn" data-img="art9.png">day9</button>
+            <button class="image-btn" data-img="art10.png">day10</button>
+            <button class="image-btn" data-img="art11.png">day11</button>
+            <button class="image-btn" data-img="art12.png">day12</button>
+            <button class="image-btn" data-img="art13.png">day13</button>
+            <button class="image-btn" data-img="art14.png">day14</button>
+            <button class="image-btn" data-img="art15.png">day15</button>
+            <button class="image-btn" data-img="art16.png">day16</button>
+            <button class="image-btn" data-img="art17.png">day17</button>
+            <button class="image-btn" data-img="art18.png">day18</button>
+            <button class="image-btn" data-img="art19.png">day19</button>
+            <button class="image-btn" data-img="art20.png">day20</button>
+            <button class="image-btn" data-img="art21.png">day21</button>
+            <button class="image-btn" data-img="art22.png">day22</button>
+            <button class="image-btn" data-img="art23.png">day23</button>
+            <button class="image-btn" data-img="art24.png">day24</button>
+            <button class="image-btn" data-img="art25.png">day25</button>
+        </div>
+
+        <!-- 画布 -->
+        <canvas id="coloringCanvas" width="800" height="1422"></canvas>
+
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <button id="undo">撤销</button>
+            <button id="clear">清除</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

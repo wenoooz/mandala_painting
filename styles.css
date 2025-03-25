@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.color-palette {
+    margin: 10px 0;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.color-swatch.active {
+    border: 3px solid #000;
+}
+
+#customColorPicker {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#coloringCanvas {
+    border: 1px solid #000;
+    margin: 10px 0;
+    cursor: crosshair;
+}
+
+.controls, .brush-controls, .image-selector {
+    margin: 10px 0;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
