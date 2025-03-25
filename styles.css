@@ -16,18 +16,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
-
 @font-face {
-    font-family: "customFont";
+    font-family: "chn";
     src: url("fonts/zihun.ttf") format("truetype");
+}
+@font-face {
     font-family: "eng";
     src: url("fonts/thin.ttf") format("truetype");
 }
 /* 标题样式 */
 h1 {
-    font-family: "customFont", sans-serif;
-    font-size: 56px;
-    color: #0e6dac;
+    font-family: "chn", sans-serif;
+    font-size: 70px;
+    color: #155a87;
 }
 
 /* 颜色板 */
@@ -44,7 +45,7 @@ h1 {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 2px solid #6e5b5bcf;
 }
 
 .color-swatch.active {
@@ -93,11 +94,11 @@ button {
 }
 
 #undo {
-    background-color: #3070d5;
+    background-color: #6c9ae4;
 }
 
 #undo:hover {
-    background-color: #0051e6;
+    background-color: #6190e6;
 }
 
 #clear {
@@ -119,10 +120,12 @@ button {
 }
 
 .image-btn {
-    font-family: "customFont", sans-serif;
+    font-family: "eng", sans-serif;
+    font-weight: 900;
+    color: #155a87;
     padding: 8px 15px;
     border: none;
-    background-color: #ddd;
+    background-color: #d9d9d9;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
