@@ -22,10 +22,11 @@ img.onload = () => {
     saveState();
 };
 
-//自动播放音乐
-window.addEventListener("DOMContentLoaded", () => {
+// 监听用户交互后播放音乐
+document.body.addEventListener("click", () => {
     bgMusic.play().catch(err => console.log("音乐自动播放失败:", err));
-});
+}, { once: true });
+
 
 
 // 多图切换
